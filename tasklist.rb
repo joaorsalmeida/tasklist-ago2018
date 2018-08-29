@@ -1,3 +1,5 @@
+require_relative 'tarefa'
+
 def menu()
   puts "\n\n"
   puts "MENU"
@@ -18,10 +20,12 @@ tarefas = []
 while(opcao != 0) do
   #tomar uma decisao: o que fazer a partir da opcao escolhida
   if(opcao == 1)
+    
     print "Nome da Tarefa: "
-    tarefa = gets()
+    tarefa = gets().chomp()
     puts "Tarefa Cadastrada >>> " + tarefa
-    tarefas << tarefa
+    tarefas << Tarefa.new(tarefa)
+
   elsif(opcao == 2)
     puts "Tarefas Cadastradas"
     puts tarefas
